@@ -232,7 +232,7 @@
 	. += filled_overlay
 
 /obj/item/kitchen/spoon/attack(mob/living/target_mob, mob/living/user, params)
-	if(!target_mob.reagents || reagents.total_volume <= 0)
+	if(!target_mob.reagents || reagents.total_volume <= 0 || user.combat_mode)
 		return  ..()
 
 	if(target_mob.is_mouth_covered(ITEM_SLOT_HEAD) || target_mob.is_mouth_covered(ITEM_SLOT_MASK))
